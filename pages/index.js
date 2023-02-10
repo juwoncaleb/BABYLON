@@ -6,7 +6,6 @@ export default function index() {
   return (
 
     <div>
-      <p >love</p>
       <Header />
       <LandingPage/>
     </div>

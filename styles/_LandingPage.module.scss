@@ -1,7 +1,228 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.love{
+
+.love {
     color: green;
     font-size: 40px;
+}
+
+.section_Text {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section_Text_main {
+    font-size: 40px;
+
+}
+
+.section_Text_sub {
+    font-size: 20px;
+
+}
+
+.start {
+    border: red 1px solid;
+    height: 40px;
+    width: 200px;
+}
+
+.demo {
+    background: red;
+    height: 40px;
+    width: 200px;
+}
+
+.landing {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.hero {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.info_Card {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.info_card_header {
+    font-weight: bold;
+    text-align: center;
+}
+
+.info_Card_img {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.info_Card_img2 {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.info_card_text {
+    text-align: center;
+}
+
+.learn {
+    position: relative;
+    left: 30%;
+
+}
+
+.track_button {
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.vis {
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.finger {
+    font-size: 20px;
+}
+
+.overview {
+    font-size: 30px;
+
+}
+
+.over {
+    width: 600px;
+}
+
+// .overview_text{
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+.candidate {
+    font-family: 'Montserrat', sans-serif;
+    border: 3px solid rgb(194, 190, 190);
+    border-radius: 20px;
+    padding-top: 60px;
+}
+
+.atss {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 200px;
+
+}
+
+.integration {
+    width: 300px;
+    margin-left: 20px;
+}
+
+.ats {
+    font-weight: 600;
+
+}
+
+.bring {
+    margin-left: 30px;
+}
+
+.overlap {
+    background-color: red;
+    height: 800px;
+}
+
+.overlap2 {
+    background-color: yellow;
+    height: 800px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    z-index: 1;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    /* for demo purpose  */
+    border-radius: 20px;
+}
+
+.stack-top {
+    z-index: 9;
+    margin: 20px;
+    /* for demo purpose  */
+    background-color: blue;
+    border-radius: 20px;
+
+}
+
+.struck {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    margin-bottom: 20px;
+}
+.Structure_text{
+    text-align: center;
+    font-size: 40px !important;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.predefined{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 15px !important;
+    font-family: 'Montserrat', sans-serif;
+}
+.access{
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+.decesion{
+    margin-top: 60px;
+
+}
+
+.platfo{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-bottom: 50px;
 }
