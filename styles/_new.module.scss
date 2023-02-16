@@ -1,0 +1,45 @@
+.createJob {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-size: 35px;
+}
+
+.option {
+    margin-top: 150px;
+}
+
+.newJob {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.process {
+    margin-right: 200px;
+    margin-left: 200px;
+
+}
+
+.fillForm {
+    text-align: center;
+
+}
+
+.jobForm {
+    background-color: #100C08;
+    height: 100vh;
+    color: wheat;
+}
+
+.formInput {
+    display: grid;
+}
+
+.joob {
+    background-color: #100C08;
+    color: wheat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

@@ -1,9 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.whole_Land {
+  background-color: #100C08;
+  color: wheat;
+}
+
 .love {
   color: green;
   font-size: 40px;
+}
+
+.template {
+  margin-bottom: 160px;
 }
 
 .section_Text {
@@ -20,7 +29,7 @@
 }
 
 .start {
-  border: red 1px solid;
+  border: wheat 1px solid;
   height: 40px;
   width: 200px;
 }
@@ -34,18 +43,20 @@
 .landing {
   margin-left: 10%;
   margin-right: 10%;
+  background-color: #100C08;
 }
 
 .hero {
   width: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
 .info {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 130px;
+  margin-bottom: 150px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -68,8 +79,15 @@
   margin-bottom: 12px;
 }
 
+.cardd {
+  background-color: rgb(39, 39, 39);
+  border-radius: 30px;
+  border: 3px solid wheat;
+  max-width: 400px;
+}
+
 .info_Card_img2 {
-  width: 120px;
+  width: 150px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -85,33 +103,86 @@
 }
 
 .track_button {
-  width: 80px;
+  width: 100px;
+  height: 30px;
   border: 2px solid black;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 .vis {
   margin-top: 25px;
   font-size: 40px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .finger {
   font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .overview {
   font-size: 30px;
 }
 
+.struk {
+  margin-top: 160px;
+}
+
 .over {
   width: 600px;
 }
 
+.accesss {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.platt {
+  margin-top: 140px;
+}
+
+.recr {
+  margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  .info_Card {
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .platfo {
+    width: 200px !important;
+  }
+  .access {
+    width: 300px !important;
+    margin-bottom: 50px;
+  }
+  .decesion {
+    width: 300px !important;
+  }
+  .over {
+    width: 400px;
+  }
+  .integration {
+    height: 400px;
+  }
+}
+.unbased {
+  border: wheat 3.5px solid;
+  border-radius: 30px;
+}
+
 .candidate {
   font-family: "Montserrat", sans-serif;
-  border: 3px solid rgb(194, 190, 190);
-  border-radius: 20px;
+  border: 3px solid wheat;
+  border-radius: 50px;
   padding-top: 60px;
+  margin-top: 120px;
 }
 
 .atss {
@@ -156,9 +227,8 @@
 }
 
 .box {
-  width: 100%;
-  height: 100%;
-  background-color: red;
+  width: 500px;
+  height: 500px;
   position: absolute;
   top: 0;
   left: 0;
@@ -167,11 +237,18 @@
   border-radius: 20px;
 }
 
+.inter {
+  margin-top: 200px;
+}
+
+.tracky {
+  margin-top: 160px;
+}
+
 .stack-top {
   z-index: 9;
-  margin: 20px;
   /* for demo purpose  */
-  background-color: blue;
+  background-color: rgb(240, 67, 67);
   border-radius: 20px;
 }
 
@@ -184,7 +261,7 @@
 
 .Structure_text {
   text-align: center;
-  font-size: 40px !important;
+  font-size: 30px !important;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
 }
@@ -192,7 +269,7 @@
 .predefined {
   margin-top: 5px;
   text-align: center;
-  font-size: 15px !important;
+  font-size: 13px !important;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -205,6 +282,8 @@
 
 .decesion {
   margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .platfo {
@@ -228,4 +307,275 @@
   font-size: 15px;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.head {
+  background-color: black;
+  color: wheat;
+}
+
+.auth {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid wheat;
+  position: relative;
+  top: 50px;
+  width: 400px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 30px;
+}
+
+.head_auth {
+  height: 100vh;
+  background-color: black;
+}
+
+.lock {
+  width: 500px;
+}
+
+.babylon {
+  text-align: center;
+  font-size: 25px;
+  color: wheat;
+}
+
+.inputDet {
+  height: 35px;
+  border: 2px solid wheat;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 70%;
+}
+
+.google {
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  background-color: black;
+  color: wheat;
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid wheat;
+}
+
+.github {
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  margin-top: 17px;
+  height: 40px;
+  background-color: black;
+  color: wheat;
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid wheat;
+}
+
+.forgot {
+  color: wheat;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.signIn {
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: 35px;
+  background-color: black;
+  color: wheat;
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid wheat;
+}
+
+.login_Icon {
+  width: 28px;
+  margin-right: 20px;
+}
+
+.dashBoard {
+  background-color: #100C08;
+  min-height: 100vh;
+  color: wheat;
+  font-family: "Montserrat", sans-serif;
+}
+
+.newJob {
+  background-color: #100C08;
+  color: wheat;
+}
+
+.noJob {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.file {
+  margin-top: 50px;
+  width: 300px;
+}
+
+.job {
+  background-color: #100C08;
+  color: wheat;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+.jobMarket {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.dropDown {
+  background-color: #100C08;
+  margin-left: 100px;
+}
+
+.jobButton {
+  margin-left: 100px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text] {
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button[type=submit] {
+  height: 30px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #ccc;
+  color: #fff;
+}
+
+.fa-search {
+  font-size: 16px;
+}
+
+.jobButton {
+  height: 38px;
+  border: 2px solid wheat;
+  border-radius: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.createJob {
+  text-align: center;
+  position: relative;
+  top: 50px;
+  font-size: 35px;
+}
+
+.option {
+  margin-top: 150px;
+}
+
+.newJob {
+  font-family: "Montserrat", sans-serif;
+}
+
+.process {
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.fillForm {
+  text-align: center;
+}
+
+.jobForm {
+  background-color: #100C08;
+  height: 100vh;
+  color: wheat;
+}
+
+.formInput {
+  display: grid;
+}
+
+.joob {
+  background-color: #100C08;
+  color: wheat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candidatelemet {
+  background-color: #100C08;
+  color: wheat;
+  min-height: 100vh;
+}
+
+.tett {
+  font-size: 40px;
+}
+
+.AllCandidates {
+  font-size: 40px;
+}
+
+.candidaTab {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.candidateTable {
+  margin-top: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  height: 600px;
+  border: 2px solid wheat;
+}
+
+.candidateHead {
+  border: 2px solid wheat;
+  height: 50px;
+}
+
+.interview {
+  min-height: 100vh;
+  background-color: #100C08;
+  color: wheat;
+}
+
+.interviewBody {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.intervo {
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.interviewFrame {
+  border: 2px solid wheat;
+  height: 600px;
+  margin-top: 20px;
 }/*# sourceMappingURL=globals.css.map */
