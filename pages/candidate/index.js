@@ -7,7 +7,7 @@ export default function index() {
     <div className='candidatelemet'>
       <DashboardHeader />
       <div className='candidaTab'>
-        <div className='flex justify-center mt-14 '>
+        {/* <div className='flex justify-center mt-14 '>
           <form className='mb-10'>
             <input type="text" placeholder="Search..." />
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -42,7 +42,7 @@ export default function index() {
               +  Add candidate
             </Link>
           </button>
-        </div>
+        </div> */}
         <p className='AllCandidates ml-1'>Candidates</p>
       </div>
       <div className='candidateTable'>
@@ -52,13 +52,13 @@ export default function index() {
           <p className='mt-2'>Stage</p>
           <p className='mt-2'>Created Date</p>
 
-         
+
         </div>
         <div className=' grid justify-center mt-40'>
-            <p className='noJob'>No Candidate Created </p>
-            <img className='file' src='relax.png' />
+          <p className='noJob'>No Candidate Created </p>
+          <img className='file' src='relax.png' />
 
-          </div>
+        </div>
       </div>
     </div>
   )
