@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function blank() {
   return (
@@ -26,13 +27,15 @@ export default function blank() {
           <p className='subb'>Select interview type to reveal specifically designed template details.</p>
 
           <div className='flex gap-6 justify-around mt-14'>
-            <div className='cardfd'>
-              <img className='coding' src='/code.png' />
-              <p>Live Coding Challenge</p>
-              <p>Evaluate candidates' code across several criteria</p>
-              <img />
+            <Link href='./det'>
+              <div className='cardfd'>
+                <img className='coding' src='/code.png' />
+                <p>Live Coding Challenge</p>
+                <p>Evaluate candidates' code across several criteria</p>
+                <img />
 
-            </div>
+              </div>
+            </Link>
 
             <div className='cardfd'>
               <img className='mailandtalk' src='/mail.png' />
@@ -45,7 +48,7 @@ export default function blank() {
 
             <div >
               <div className='cardfd'>
-              <img className='mailandtalk' src='/beh.png' />
+                <img className='mailandtalk' src='/beh.png' />
 
                 <p>Technical Q/A</p>
                 <p>Ask questions from different competence areas..</p>

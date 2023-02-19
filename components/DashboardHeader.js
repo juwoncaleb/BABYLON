@@ -17,11 +17,16 @@ export default function DashboardHeader() {
         <Link href="/Dashboard" >
         <img className=' logo ml-10 mt-4' src='./babylon.png' />
         </Link>
+        <Link href="/interview" >
         <p className='mt-10 ml-10'>Interview</p>
+        </Link>
+        <Link href="/template" >
         <p className='mt-10 ml-10'>Templates</p>
+        </Link>
         <p className='mt-10 ml-10'>Profile</p>
 
       </div>
     </div>
   )
 }
+
