@@ -1,4 +1,4 @@
-.candidatelemet{
+.candidatelemet {
     background-color: #100C08;
     color: wheat;
     min-height: 100vh;
@@ -6,45 +6,54 @@
 
 
 }
-.templatebarrier{
+
+.templatebarrier {
     height: 150px;
     width: 400px;
     border: solid 2px wheat;
     border-radius: 20px;
-   
+
 }
-.templateClassification{
+
+.templateClassification {
     margin-left: 25%;
     margin-top: 40px;
     display: flex;
 }
-.interviewHeader{
+
+.interviewHeader {
     font-size: 20px;
 }
-.choseTemplate{
+
+.choseTemplate {
     margin-top: 130px;
 }
-.icon{
+
+.icon {
     width: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
 }
-.Large_icon{
+
+.Large_icon {
     width: 80px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
 }
-.list{
-  
+
+.list {
+
     margin-top: 100px;
 }
-.temp{
+
+.temp {
     margin-right: 15%;
     margin-left: 15%;
 }
-.code{
+
+.code {
     border-radius: 30px;
     width: 300px;
     text-align: center;
@@ -52,39 +61,46 @@
     padding-right: 40px;
 
 }
-.blank{
+
+.blank {
     background-color: #100C08;
     color: wheat;
     min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;  
-   ; 
+    font-family: 'Montserrat', sans-serif;
+    ;
 }
-.mainBlankPage{
+
+.mainBlankPage {
     margin-left: 15%;
     margin-right: 15%
 }
-.StageNumber{
+
+.StageNumber {
     font-size: 30px;
     text-align: center;
     margin-bottom: 15px;
 }
-.interviewType{
+
+.interviewType {
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
 }
-.interviewTypeHeader{
+
+.interviewTypeHeader {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     margin-top: 150px;
 }
-.subb{
+
+.subb {
     text-align: center;
     margin-bottom: 150px;
     margin-top: 20px;
 }
-.cardfd{
+
+.cardfd {
     text-align: center;
     border: #92602e 1px solid;
     border-radius: 30px;
@@ -93,38 +109,45 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-.mailandtalk{
+
+.mailandtalk {
     width: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 }
-.coding{
+
+.coding {
     width: 135px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 
 }
-.details{
+
+.details {
     background-color: #100C08;
     color: wheat;
     min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
 }
-.detailss{
+
+.detailss {
     margin-left: 15%;
     margin-right: 15%;
 }
-.descrip{
+
+.descrip {
     margin-top: 80px;
     width: 700px;
     height: 150px;
 }
-.checkBox{
+
+.checkBox {
     margin-top: 80px;
 }
-.fill{
+
+.fill {
     margin-left: 5%;
     margin-right: 5%;
     padding: 70px 70px 50px 50px;
@@ -135,72 +158,84 @@
     bottom: 30px;
 
 }
-.border{
+
+.border {
     margin-top: 60px;
     border: 2px dotted;
 }
-.addgroup{
-   text-align: center;
+
+.addgroup {
+    text-align: center;
 
 }
-.groupcolor{
-height: 30px;
-background-color: wheat;
-width: 150px;
-margin-left: auto;
-margin-right: auto;
-margin-top: 30px;
-color: black !important;
-padding-top: 4px;
-border-radius: 10px;
+
+.groupcolor {
+    height: 30px;
+    background-color: wheat;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    color: black !important;
+    padding-top: 4px;
+    border-radius: 10px;
 }
-.check{
+
+.check {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-.add{
+
+.add {
     text-align: center;
     margin-top: 30px;
 }
-.arrow{
+
+.arrow {
     transform: rotate(-90deg);
     width: 25px;
-margin-right: 10px;
+    margin-right: 10px;
 }
-.dots{
+
+.dots {
     transform: rotate(-90deg);
     width: 20px;
 }
-.addquestion{
+
+.addquestion {
     text-align: center;
 }
-.quest{
+
+.quest {
     margin-left: auto;
     margin-right: auto;
     width: 150px;
     margin-top: 50px;
 }
 
-.prev{
+.prev {
     background-color: #100C08;
     color: wheat;
     min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
 }
-.preview{
+
+.preview {
     margin-left: 10%;
     margin-right: 10%;
 
 }
-.reminder{
+
+.reminder {
     width: 60%;
     background-color: #1f1810 !important;
     height: 300px;
 
 
 }
-.fin{
+
+.fin {
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
@@ -208,21 +243,47 @@ margin-right: 10px;
     background-color: wheat;
     color: #1f1810 !important;
 }
-.finn{
+
+.finn {
     text-align: center;
 }
-.dotss{
+
+.dotss {
     transform: rotate(-90deg);
-width: 20px; 
-position: relative;
-bottom:8px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
 }
-.questions{
+
+.questions {
     height: 300px;
     background-color: #1f1810 !important;
-padding-top: 1px;
+    padding-top: 1px;
 }
-.checklist{
+
+.checklist {
     background-color: #1f1810 !important;
-  width: 40%;
+    width: 40%;
+}
+
+.takeHome {
+    background-color: #100C08;
+    color: wheat;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.take {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.titleInput{
+    width: 80%;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+.takeHomedes{
+    margin-top: 15px;
+    width: 80%;
+    height: 200px;
 }

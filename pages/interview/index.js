@@ -50,7 +50,7 @@ export default function index() {
                 <hr className='borderLine' />
               </div>
               <div>
-                <div className='flex justify-between mt-2 mb-2 ml-4 mr-4'>
+                <div className='flex justify-between mt-6  mb-2 ml-4 mr-4'>
                   <p>JUWON</p>
                   <p>Software Engineer </p>
                   <p>Tuesday </p>
@@ -68,7 +68,7 @@ export default function index() {
 
               </div>
               <div>
-                <div className='flex justify-between mt-2 mb-2 ml-4 mr-4'>
+                <div className='flex justify-between mt-6 mb-2 ml-4 mr-4'>
                   <p>JUWON</p>
                   <p>Software Engineer </p>
                   <p>Tuesday </p>
@@ -86,7 +86,7 @@ export default function index() {
 
               </div>
               <div>
-                <div className='flex justify-between mt-2 mb-2 ml-4 mr-4'>
+                <div className='flex justify-between mt-6  mb-2 ml-4 mr-4'>
                   <p>JUWON</p>
                   <p>Software Engineer </p>
                   <p>Tuesday </p>

@@ -36,15 +36,16 @@ export default function blank() {
 
               </div>
             </Link>
+            <Link href="takeHome">
 
-            <div className='cardfd'>
-              <img className='mailandtalk' src='/mail.png' />
-              <p>Take Home Assignment</p>
-              <p>Ask canndidate to complete an assignment </p>
-              <p>and return the results.</p>
-              <img />
+              <div className='cardfd'>
+                <img className='mailandtalk' src='/mail.png' />
+                <p>Take Home Assignment</p>
+                <p>Ask canndidate to complete an assignment </p>
+                <p>and return the results.</p>
+                <img />
 
-            </div>
+              </div></Link>
 
             <div >
               <div className='cardfd'>

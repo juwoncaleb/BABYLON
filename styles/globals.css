@@ -853,4 +853,28 @@ button[type=submit] {
 .checklist {
   background-color: #1f1810 !important;
   width: 40%;
+}
+
+.takeHome {
+  background-color: #100C08;
+  color: wheat;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+.take {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.titleInput {
+  width: 80%;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+.takeHomedes {
+  margin-top: 15px;
+  width: 80%;
+  height: 200px;
 }/*# sourceMappingURL=globals.css.map */
