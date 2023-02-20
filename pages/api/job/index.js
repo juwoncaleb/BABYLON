@@ -1,5 +1,5 @@
-import dbConnect from "../../utils/Mongo";
-import Job from "../../Model/job";
+import dbConnect from "../../../utils/Mongo";
+import Job from "../../../Model/job";
 
 export default async function Handler (req, res) {
     const {method} = req
