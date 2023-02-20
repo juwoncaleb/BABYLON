@@ -414,6 +414,7 @@
 .newJob {
   background-color: #100C08;
   color: wheat;
+  height: 100vh;
 }
 
 .noJob {

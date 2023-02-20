@@ -38,7 +38,7 @@ export default function job() {
               <label for="description">Description:</label>
               <textarea id="description" name="description"></textarea>
             </div>
-            <button type="submit mt-10">Submit</button>
+            <button type="submit mt-20 mb-10">Submit</button>
           </form>
         </div>
       </div>

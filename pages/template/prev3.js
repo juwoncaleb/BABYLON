@@ -61,3 +61,4 @@ export default function prev2() {
         </div >
     )
 }
+// BUBBLE SORT ALOGORITHM
