@@ -1,9 +1,11 @@
 import DashboardHeader from 'components/DashboardHeader'
 import React from 'react'
 import Link from 'next/link'
+import Job from 'Model/Job'
+import dbConnect from 'utils/Mongo'
 
-
-export default function index() {
+export default function index({newJobs}) {
+    console.log(newJobs)
     return (
         <div className='job'>
             <DashboardHeader />
@@ -50,3 +52,24 @@ export default function index() {
         </div>
     )
 }
+
+export const getServerSideProps = async () => {
+    try {
+        await dbConnect();
+        const allJobs = await Job.find();
+
+        return {
+            props: {
+                newJobs: JSON.parse(JSON.stringify(allJobs)),
+            },
+        };
+    } catch (error) {
+        console.log("cant fetch");
+        return {
+            props: {
+                comfort: [],
+            },
+        };
+    }
+};
+

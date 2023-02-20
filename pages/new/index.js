@@ -47,13 +47,13 @@ export default function job() {
         <p className='fillForm  mt-20'>Fill out details</p>
         <p className='fillForm mt-4'>Target the right candidate , write down job detail information</p>
 
-        <div className='grid'>
-          <label for="title">Title:</label>
-          <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" />
-        </div>
+
         <div className='formInput flex justify-center mt-14'>
           <form className='grid '>
-
+            <div className='grid'>
+              <label for="title">Title:</label>
+              <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" />
+            </div>
             <div className='grid'>
               <label for="department">Department</label>
               <input value={department} onChange={(e) => setDepartment(e.target.value)} type="text" id="department" name="department" />
@@ -76,12 +76,12 @@ export default function job() {
               <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='mb-10' id="description" name="description"></textarea>
             </div>
           </form>
-        </div>
-
-        <button type="submit mt-20 mb-10">Submit</button>
-        <div onClick={() => { submitComment(); }}>
+          <div className='submittButton' onClick={() => { submitComment();refreshPage() }}>
           <p>SUBMIT</p>
         </div>
+        </div>
+
+       
       </div>
 
     </div>

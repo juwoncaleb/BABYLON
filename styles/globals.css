@@ -441,6 +441,11 @@
   margin-right: 5%;
 }
 
+.submittButton {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .dropDown {
   background-color: #100C08;
   margin-left: 100px;
@@ -901,7 +906,10 @@ button[type=submit] {
   height: 28px;
   margin-right: 5px;
 }
-
+input::placeholder,
+textarea::placeholder {
+  color: black;
+}
 .takeHomedes {
   margin-top: 15px;
   width: 80%;
