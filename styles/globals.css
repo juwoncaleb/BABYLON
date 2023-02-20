@@ -519,6 +519,10 @@ button[type=submit] {
   color: wheat;
 }
 
+.tag {
+  height: 100px;
+}
+
 .formInput {
   display: grid;
 }
@@ -904,10 +908,7 @@ button[type=submit] {
   border: 3px solid black;
   border-radius: 10px;
 }
-input::placeholder,
-textarea::placeholder {
-  color: black !important;
-}
+
 .as {
   text-align: center;
 }

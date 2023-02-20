@@ -73,6 +73,28 @@ export default function job() {
               <label for="deadline mb-10">Deadline</label>
               <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="date" id="deadline" name="deadline" />
             </div>
+            <div className='mt-6 Stages'>
+              <label for="Stages">Stages</label>
+              <input
+                value={currentTag}
+                onChange={e => setCurrentTag(e.target.value)}
+                onKeyPress={e => {
+                  if (e.key === 'Enter' && currentTag !== '') {
+                    setTags([...tags, currentTag])
+                    setCurrentTag('')
+                  }
+                }}
+              />
+              {tags.map(tag => (
+                <div key={tag} className="tag ">
+                  {tag}
+                  {/* this button is used to delete */}
+                  <button className='deleeTag' onClick={() => setTags(tags.filter(t => t !== tag))}>x</button>
+
+                </div>
+              ))}
+
+            </div>
             <div className='grid mt-10'>
               <label for="description">Description</label>
               <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='mb-10' id="description" name="description"></textarea>
@@ -82,28 +104,7 @@ export default function job() {
             <p>SUBMIT</p>
           </div>
         </div>
-        <div className='mt-6 mb-6'>
-          <label for="Stages">Stages</label>
-          <input
-            value={currentTag}
-            onChange={e => setCurrentTag(e.target.value)}
-            onKeyPress={e => {
-              if (e.key === 'Enter' && currentTag !== '') {
-                setTags([...tags, currentTag])
-                setCurrentTag('')
-              }
-            }}
-          />
-          {tags.map(tag => (
-            <div key={tag} className="tag ">
-              {tag}
-              {/* this button is used to delete */}
-              <button className='deleeTag' onClick={() => setTags(tags.filter(t => t !== tag))}>x</button>
 
-            </div>
-          ))}
-
-        </div>
 
       </div>
 
