@@ -9,8 +9,10 @@ export default function job() {
   const [salary, setSalary] = useState('')
   const [deadline, setDeadline] = useState('')
   const [description, setDescription] = useState('')
-  console.log(title);
-
+  // this array state contains the created statge
+  const [tags, setTags] = useState([])
+  // this holds the current stage till it is pusged above
+  const [currentTag, setCurrentTag] = useState('')
   // SEND JOB TO MONGODB THROUGH API
   //SEND TO MONGO DATA BASE
   const submitComment = async () => {
@@ -76,12 +78,33 @@ export default function job() {
               <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='mb-10' id="description" name="description"></textarea>
             </div>
           </form>
-          <div className='submittButton' onClick={() => { submitComment();refreshPage() }}>
-          <p>SUBMIT</p>
+          <div className='submittButton' onClick={() => { submitComment(); refreshPage() }}>
+            <p>SUBMIT</p>
+          </div>
         </div>
+        <div className='mt-6 mb-6'>
+          <label for="Stages">Stages</label>
+          <input
+            value={currentTag}
+            onChange={e => setCurrentTag(e.target.value)}
+            onKeyPress={e => {
+              if (e.key === 'Enter' && currentTag !== '') {
+                setTags([...tags, currentTag])
+                setCurrentTag('')
+              }
+            }}
+          />
+          {tags.map(tag => (
+            <div key={tag} className="tag ">
+              {tag}
+              {/* this button is used to delete */}
+              <button className='deleeTag' onClick={() => setTags(tags.filter(t => t !== tag))}>x</button>
+
+            </div>
+          ))}
+
         </div>
 
-       
       </div>
 
     </div>

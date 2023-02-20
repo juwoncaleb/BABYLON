@@ -41,5 +41,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
+}
+
+.deleeTag {
+    margin-left: 5px;
+    margin-bottom: 4px;
+    position: relative;
+    bottom: 10px;
+    color: red !important;
+}
+.tag{
+    position: relative;
+    top: 13px;
+}
