@@ -1,25 +1,24 @@
 import { Schema, model, models } from "mongoose"
 
   const jobSchema = new Schema({
-    Title: {
+    title: {
       type: String
     },
-    Department: {
+    department: {
       type: String
     },
-    Location: {
+    location: {
       type: String
     },
-    Salary: {
+    salary: {
       type: Number,
-      required: true,
       maxlength: 60,
     },
-    Deadline: {
+    deadline: {
       type: String,
       maxlength: 60,
     },
-    Description:{
+    description:{
         type: String,
       maxlength: 60,
     }
