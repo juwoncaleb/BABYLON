@@ -4,7 +4,17 @@ import Link from 'next/link'
 import Job from 'Model/Job'
 import dbConnect from 'utils/Mongo'
 
-export default function index({newJobs}) {
+// this package helpd cached fetched data
+import { useQuery } from 'react-query';
+
+
+export default function index({ newJobs }) {
+    const { newJobs: cachednewJobs, status } = useQuery('newJobs', () => newJobs);
+    //LOADING SPINNER
+    if (status === 'loading')  return <div>LOADING DATA</div>
+    if (status === 'error') return <div>Error loading data</div>;
+
+
     console.log(newJobs)
     return (
         <div className='job'>
@@ -56,8 +66,9 @@ export default function index({newJobs}) {
 export const getServerSideProps = async () => {
     try {
         await dbConnect();
+        console.log("fetching data");
         const allJobs = await Job.find();
-
+        console.log("data fetched");
         return {
             props: {
                 newJobs: JSON.parse(JSON.stringify(allJobs)),
