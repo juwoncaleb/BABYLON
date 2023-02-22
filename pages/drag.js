@@ -1,28 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
-export default function drag() {
+// FAKE DATABASE
+const arrayCon = [
+    {
+        id: "1",
+        first: "james"
 
-    const [tasks, setTasks] = useState([
-        { id: 'task-1', content: 'Task 1' },
-        { id: 'task-2', content: 'Task 2' },
-        { id: 'task-3', content: 'Task 3' },
-        { id: 'task-4', content: 'Task 4' },
-        { id: 'task-5', content: 'Task 5' },
-    ]);
+    },
 
-    const data = {
-        tk: {
-            "t1": { id: 'task-1', content: 'Task 1' },
-            "t2": { id: 'task-2', content: 'Task 2' },
-            "t3": { id: 'task-3', content: 'Task 3' },
-            "t4": { id: 'task-4', content: 'Task 4' },
-            "t5": { id: 'task-5', content: 'Task 5' },
-        }
+    {
+        id: "2",
+        first: "sola"
+
+    },
+    {
+        id: "3",
+        first: "kemi"
+
+    },
+    {
+        id: "1",
+        first: "si"
 
     }
+]
+export default function drag() {
     return (
-        <div>
-
-        </div>
+      <
     )
 }
