@@ -20,9 +20,12 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "18.2.0",
     "react-query": "^3.39.3",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/sortablejs": "^1.15.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "sass": "^1.57.1",

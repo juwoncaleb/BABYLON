@@ -1,32 +1,24 @@
-import React, { useState } from 'react'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import React from "react";
+import { ReactSortable, Sortable, MultiDrag, Swap } from "react-sortablejs";
 
-// FAKE DATABASE
-const arrayCon = [
-    {
-        id: "1",
-        first: "james"
+// mount whatever plugins you'd like to. These are the only current options.
+Sortable.mount(new MultiDrag(), new Swap());
 
-    },
+const App = () => {
+  const [state, setState] = useState([
+    { id: 1, name: "shrek" },
+    { id: 2, name: "fiona" },
+  ]);
 
-    {
-        id: "2",
-        first: "sola"
-
-    },
-    {
-        id: "3",
-        first: "kemi"
-
-    },
-    {
-        id: "1",
-        first: "si"
-
-    }
-]
-export default function drag() {
-    return (
-      <
-    )
-}
+  return (
+    <ReactSortable
+      multiDrag // enables mutidrag
+      // OR
+      swap // enables swap
+    >
+      {state.map((item) => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </ReactSortable>
+  );
+};
