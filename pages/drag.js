@@ -1,23 +1,44 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Sortable, { MultiDrag, Swap } from 'sortablejs';
+import React from 'react';
+import GridLayout from 'react-grid-layout';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 
-export default function DragAndDrop() {
-  const [items, setItems] = useState([
-    { id: 1, content: 'Item 1' },
-    { id: 2, content: 'Item 2' },
-    { id: 3, content: 'Item 3' },
-    { id: 4, content: 'Item 4' },
-    { id: 5, content: 'Item 5' },
-  ]);
 
- 
+const GridExample = () => {
+  // Define a grid layout with four items
+  const layout = [
+    { i: 'a', x: 0, y: 0, w: 1, h: 2 },
+    { i: 'b', x: 1, y: 0, w: 1, h: 2 },
+    { i: 'c', x: 2, y: 0, w: 1, h: 2 },
+    { i: 'd', x: 3, y: 0, w: 1, h: 2 },
+  ];
+
+  // Define the content for each item
+  const items = [
+    { i: 'a', content: 'Item A' },
+    { i: 'b', content: 'Item B' },
+    { i: 'c', content: 'Item C' },
+    { i: 'd', content: 'Item D' },
+  ];
+
+  // Define the grid dimensions and properties
+  const gridProps = {
+    className: 'layout',
+    cols: 5,
+    rowHeight: 100,
+  };
 
   return (
-      <div >
-     
-      {items.map((item) => (
-        <div key={item.id}>{item.content}</div>
-      ))}
+    <div className="divv">
+      <GridLayout {...gridProps} layout={layout}>
+        {items.map((item) => (
+          <div key={item.i} className="grid-item">
+            {item.content}
+          </div>
+        ))}
+      </GridLayout>
     </div>
   );
-}
+};
+
+export default GridExample;

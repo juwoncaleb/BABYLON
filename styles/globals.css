@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .whole_Land {
   background-color: #100C08;
   color: wheat;
@@ -930,6 +931,3 @@ button[type=submit] {
   height: 200px;
 }/*# sourceMappingURL=globals.css.map */
 
-..drag{
-  height: 100%;
-}
