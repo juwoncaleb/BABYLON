@@ -1,34 +1,26 @@
-import React from 'react';
-import GridLayout from 'react-grid-layout';
-import 'react-grid-layout/css/styles.css';
-import 'react-resizable/css/styles.css';
+import React from 'react'
+import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
 
-
-const GridExample = () => {
+export default function data() {
   const layout = [
-    { i: 'a', x: 0, y: 0, w: 1, h: 2 },
-    { i: 'b', x: 1, y: 0, w: 1, h: 2 },
-    { i: 'c', x: 2, y: 0, w: 1, h: 2 },
-    
+    { i: "a", x: 0, y: 0, w: 1, h: 2, },
+    { i: "b", x: 1, y: 0, w: 3, h: 2, },
+    { i: "c", x: 4, y: 0, w: 1, h: 2 }
   ];
-
-  const items = [
-    { i: 'a', content: 'Item A' },
-    { i: 'b', content: 'Item B' },
-    { i: 'c', content: 'Item C' },
-  ];
-
   return (
     <div>
-      <GridLayout className="layout" layout={layout} cols={3} rowHeight={100} width={1200}>
-      {items.map((item) => (
-          <div key={item.i} className="grid-item">
-            {item.content}
-          </div>
-        ))}
-      </GridLayout>
+      <ResponsiveGridLayout
+        className="layout"
+        layout={layout}
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+        cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+         rowHeight={30}
+        width={1200}
+      >
+        <div key="a">a</div>
+        <div key="b">b</div>
+        <div key="c">c</div>
+      </ResponsiveGridLayout>
     </div>
-  );
-};
-
-export default GridExample;
+  )
+}
