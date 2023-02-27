@@ -502,6 +502,33 @@ button[type=submit] {
   border: 2px solid wheat;
 }
 
+.eachjobs {
+  background-color: #100C08;
+  color: wheat;
+  height: 100vh;
+}
+
+.layout {
+  position: relative;
+  top: 50px;
+}
+
+.title {
+  text-align: center;
+  position: relative;
+  top: 50px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.tunnel {
+  font-size: 20px;
+}
+
+.toptunnel {
+  margin-top: 100px;
+}
+
 .createJob {
   text-align: center;
   position: relative;
