@@ -538,10 +538,9 @@ button[type=submit] {
 }
 
 .deleeTag {
-  margin-left: 5px;
-  margin-bottom: 4px;
+  margin-left: 10px;
   position: relative;
-  bottom: 10px;
+  bottom: 25px;
   color: red !important;
 }
 
@@ -934,4 +933,7 @@ button[type=submit] {
 
 .layout{
   background-color: #92602e;
+}
+.tagss{
+  max-width: 400px;
 }

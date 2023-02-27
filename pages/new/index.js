@@ -28,7 +28,8 @@ export default function job() {
         location,
         salary,
         deadline,
-        description
+        description,
+        tags
       }),
     })
 
@@ -47,11 +48,14 @@ export default function job() {
 
 
         <p className='fillForm  mt-20'>Fill out details</p>
+
         <p className='fillForm mt-4'>Target the right candidate , write down job detail information</p>
 
 
         <div className='formInput flex justify-center mt-14'>
-          <form className='grid '>
+
+          <div className='grid '>
+
             <div className='grid'>
               <label for="title">Title:</label>
               <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" />
@@ -73,35 +77,40 @@ export default function job() {
               <label for="deadline mb-10">Deadline</label>
               <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="date" id="deadline" name="deadline" />
             </div>
-            <div className='mt-6 Stages'>
-              <label for="Stages">Stages</label>
-              <input
-                value={currentTag}
-                onChange={e => setCurrentTag(e.target.value)}
-                onKeyPress={e => {
-                  if (e.key === 'Enter' && currentTag !== '') {
-                    setTags([...tags, currentTag])
-                    setCurrentTag('')
-                  }
-                }}
-              />
-              {tags.map(tag => (
-                <div key={tag} className="tag ">
-                  {tag}
-                  {/* this button is used to delete */}
-                  <button className='deleeTag' onClick={() => setTags(tags.filter(t => t !== tag))}>x</button>
+            <div className='mt-4 mb-2 tagss'>
+              <div className='flex'>
 
-                </div>
-              ))}
+                <p className='mr-4'>Stages</p>
+                <input value={currentTag}
+                  onChange={e => setCurrentTag(e.target.value)}
+                  onKeyPress={e => {
+                    if (e.key === 'Enter' && currentTag !== '') {
+                      setTags([...tags, currentTag])
+                      setCurrentTag('')
+                    }
+                  }}
+                />
 
+
+              </div>
+              <div className='grid  grid-cols-3	 '>
+                {tags.map(tag => (
+                  <div key={tag} className="grid g">
+                    <p className='ml-2 mr-2'>{tag}</p>
+                    {/* this button is used to delete */}
+                    <button className='deleeTag' onClick={() => setTags(tags.filter(t => t !== tag))}>x</button>
+
+                  </div>
+                ))}
+              </div>
             </div>
             <div className='grid mt-10'>
               <label for="description">Description</label>
               <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='mb-10' id="description" name="description"></textarea>
             </div>
-          </form>
+          </div>
           <div className='submittButton' onClick={() => { submitComment(); refreshPage() }}>
-            <p>SUBMIT</p>
+            <p className='cursor-pointer'>SUBMIT</p>
           </div>
         </div>
 
