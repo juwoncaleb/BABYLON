@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
+import GridLayout from "react-grid-layout";
 import Job from 'Model/Job'
 import dbConnect from 'utils/Mongo'
 import Link from 'next/link'
@@ -8,12 +8,20 @@ import Link from 'next/link'
 export default function data({ eachJobs }) {
   const [selectedButton, setSelectedButton] = useState(null);
 
-  console.log(eachJobs);
-  const layout = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2, },
-    { i: "b", x: 1, y: 0, w: 3, h: 2, },
-    { i: "c", x: 4, y: 0, w: 1, h: 2 }
-  ];
+  const [layout, setLayout] = useState([
+    { i: '1', x: 0, y: 0, w: 2, h: 2 },
+    { i: '2', x: 2, y: 0, w: 2, h: 2 },
+    { i: '3', x: 4, y: 0, w: 2, h: 2 },
+    { i: '4', x: 6, y: 0, w: 2, h: 2 },
+    { i: '5', x: 8, y: 0, w: 2, h: 2 },
+  ]);
+
+  const onLayoutChange = (layout) => {
+    setLayout(layout);
+  };
+
+
+
   return (
     <div className='eachjobs mb-4'>
       <div className='title-container '>
@@ -31,28 +39,62 @@ export default function data({ eachJobs }) {
       {/* DETAILS */}
       {selectedButton === 1 ? <div>
 
-        <div className=''>
+        <div className='flex justify-around mt-10'>
           <p>{eachJobs.title}</p>
+          <p>Edit</p>
         </div>
-        <div>$ {eachJobs.salary}</div>
+        <div className='flex justify-around'>
+          <p>$ {eachJobs.salary}</p>
+          <p>Edit</p>
+        </div>
+        <div className='flex justify-around'><p>{eachJobs.deadline}</p> <p>Edit</p></div>
+        <div className='flex justify-around'><p>{eachJobs.location}</p> <p>Edit</p></div>
+        <div className='flex justify-around'><p>{eachJobs.department}</p> <p>Edit</p></div>
       </div> : null}
 
 
 
 
       {/* PIPLINE */}
-      {selectedButton === 2 ? <div> <ResponsiveGridLayout
-        className="layout  "
-        layout={layout}
-        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-        cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-        rowHeight={30}
-        width={1200}
-      >
-        <div key="a">a</div>
-        <div key="b">b</div>
-        <div key="c">c</div>
-      </ResponsiveGridLayout>
+      {selectedButton === 2 ? <div>
+        <div className='flex justify-around mt-14 stages'>
+          <p>Phone Screen</p>
+          <p>Technical</p>
+          <p>Cultural</p>
+          <p>Behavorial</p>
+          <p>Offer</p>
+        </div>
+
+        <GridLayout
+          className="layout"
+          layout={layout}
+          cols={12}
+          rowHeight={100}
+          width={1200}
+          onLayoutChange={onLayoutChange}
+          draggableHandle=".handle"
+        >
+          <div key="1" className="box">
+            <div className="handle">Drag from here</div>
+            Box 1
+          </div>
+          <div key="2" className="box">
+            <div className="handle">Drag from here</div>
+            Box 2
+          </div>
+          <div key="3" className="box">
+            <div className="handle">Drag from here</div>
+            Box 3
+          </div>
+          <div key="4" className="box">
+            <div className="handle">Drag from here</div>
+            Box 4
+          </div>
+          <div key="5" className="box">
+            <div className="handle">Drag from here</div>
+            Box 5
+          </div>
+        </GridLayout>
       </div> : null}
 
 

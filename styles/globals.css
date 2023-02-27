@@ -529,6 +529,22 @@ button[type=submit] {
   margin-top: 100px;
 }
 
+.stages {
+  height: 50px;
+  border: 2px solid wheat;
+  padding-top: 10px;
+}
+
+.rows {
+  width: 200px;
+  height: 50px !important;
+  background-color: red;
+}
+
+.react-grid-item {
+  margin: 0 15px 15px 0;
+}
+
 .createJob {
   text-align: center;
   position: relative;
@@ -620,6 +636,21 @@ button[type=submit] {
 .candidateHead {
   border: 2px solid wheat;
   height: 50px;
+}
+
+.resume {
+  height: 200px;
+  width: 500px;
+  border: 2px dotted wheat;
+}
+
+.subb {
+  text-align: center;
+}
+
+.upload {
+  margin-left: 25%;
+  margin-top: 50px;
 }
 
 .interview {

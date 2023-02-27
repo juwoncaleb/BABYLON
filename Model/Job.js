@@ -32,6 +32,9 @@ import { Schema, model, models } from "mongoose"
       maxlength: 60,
     
       required: true
+    },
+    pdf:{
+      type: String,
     }
   },
   

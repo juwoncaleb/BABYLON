@@ -1,103 +1,134 @@
-.newJob{
+.newJob {
   background-color: #100C08;
-color: wheat;
-height: 100vh;
+  color: wheat;
+  height: 100vh;
 }
-.noJob{
+
+.noJob {
   text-align: center;
   margin-bottom: 20px;
   font-size: 20px;
 }
-.file{
+
+.file {
   margin-top: 50px;
   width: 300px;
 }
+
 .job {
-    background-color: #100C08;
-    color: wheat;
-    width: 100%;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+  background-color: #100C08;
+  color: wheat;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 
 }
-.jobMarket{
-    margin-left: 5%;
-    margin-right: 5%;
+
+.jobMarket {
+  margin-left: 5%;
+  margin-right: 5%;
 }
-.submittButton{
+
+.submittButton {
   margin-right: auto;
   margin-left: auto;
 }
-.dropDown{
-    background-color: #100C08;
-    margin-left: 100px;
+
+.dropDown {
+  background-color: #100C08;
+  margin-left: 100px;
 }
-.jobButton{
-    margin-left: 100px;
+
+.jobButton {
+  margin-left: 100px;
 }
+
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  input[type="text"] {
-    width: 300px;
-    height: 30px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    height: 30px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    background-color: #ccc;
-    color: #fff;
-  }
-  
-  .fa-search {
-    font-size: 16px;
-  }
-  .jobButton{
-    height: 38px;
-    border: 2px solid wheat;
-    border-radius: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
-  }
-  .depart{
-    width: 150px;
-    height: 30px;
-    border-radius: 50px;
-    background-color: wheat;
-    color: #100C08 !important;
-    padding-left: 20px;
-  }
-  .newjobz{
-    border: 2px solid wheat;
-  }
-  .eachjobs{
-    background-color: #100C08;
-    color: wheat;
-    height: 100vh;
-  }
-  
-  .layout{
-    position: relative;
-    top: 50px;
-  }
-  .title{
-    text-align: center;
-    position: relative;
-    top: 50px;
-    font-size: 60px;
-    font-weight: bold;
-  }
-  .tunnel{
-    font-size: 20px;
-  }
-  .toptunnel{
-    margin-top: 100px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  height: 30px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #ccc;
+  color: #fff;
+}
+
+.fa-search {
+  font-size: 16px;
+}
+
+.jobButton {
+  height: 38px;
+  border: 2px solid wheat;
+  border-radius: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.depart {
+  width: 150px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: wheat;
+  color: #100C08 !important;
+  padding-left: 20px;
+}
+
+.newjobz {
+  border: 2px solid wheat;
+}
+
+.eachjobs {
+  background-color: #100C08;
+  color: wheat;
+  height: 100vh;
+}
+
+.layout {
+  position: relative;
+  top: 50px;
+
+
+}
+
+.title {
+  text-align: center;
+  position: relative;
+  top: 50px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.tunnel {
+  font-size: 20px;
+}
+
+.toptunnel {
+  margin-top: 100px;
+}
+
+.stages {
+  height: 50px;
+  border: 2px solid wheat;
+  padding-top: 10px;
+}
+.rows{
+  width: 200px;
+  height: 50px !important;
+  background-color: red;
+}
+.react-grid-item {
+  margin: 0 15px 15px 0;
+}

@@ -1,4 +1,4 @@
-.candidatelemet{
+.candidatelemet {
     background-color: #100C08;
     color: wheat;
     min-height: 100vh;
@@ -6,24 +6,42 @@
 
 
 }
-.tett{
+
+.tett {
     font-size: 40px;
 }
-.AllCandidates{
+
+.AllCandidates {
     font-size: 40px;
 }
-.candidaTab{
+
+.candidaTab {
     margin-left: 15%;
     margin-right: 15%;
 }
-.candidateTable{
+
+.candidateTable {
     margin-top: 50px;
     margin-left: 15%;
     margin-right: 15%;
     height: 600px;
     border: 2px solid wheat;
 }
-.candidateHead{
+
+.candidateHead {
     border: 2px solid wheat;
-  height: 50px;
+    height: 50px;
+}
+
+.resume {
+    height: 200px;
+    width: 500px;
+    border: 2px dotted wheat;
+}
+.subb{
+    text-align: center;
+}
+.upload{
+    margin-left: 25%;
+    margin-top: 50px;
 }

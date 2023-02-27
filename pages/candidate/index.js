@@ -38,7 +38,7 @@ export default function index() {
           </select>
 
           <button className='jobButton mb-10'>
-            <Link href="/new" >
+            <Link href="/candidate/employee" >
               +  Add candidate
             </Link>
           </button>
