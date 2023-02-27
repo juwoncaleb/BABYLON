@@ -1,5 +1,5 @@
 import DashboardHeader from 'components/DashboardHeader'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Job from 'Model/Job'
 import dbConnect from 'utils/Mongo'
@@ -9,12 +9,15 @@ import { useQuery } from 'react-query';
 
 
 export default function index({ newJobs }) {
+    const [noJobs, setNojobs] = useState(false)
+    // this is used in client side cachng
     const { newJobs: cachednewJobs, status } = useQuery('newJobs', () => newJobs);
     //LOADING SPINNER
-    if (status === 'loading')  return <div>LOADING DATA</div>
+    if (status === 'loading') return <div>LOADING DATA</div>
     if (status === 'error') return <div>Error loading data</div>;
-
-
+    if (newJobs && newJobs.length === 0) {
+        setNojobs(true)
+    }
     console.log(newJobs)
     return (
         <div className='job'>
@@ -53,11 +56,25 @@ export default function index({ newJobs }) {
                         </Link>
                     </button>
                 </div> */}
-                <div className=' grid justify-center mt-40'>
+
+                {noJobs ? (<div className=' grid justify-center mt-40'>
                     <p className='noJob'>No Job Created </p>
                     <img className='file' src='file.png' />
 
-                </div>
+                </div>) : (newJobs.map(job => (
+                    <Link href={`/job/${job._id}`}>
+                        <div key={job.salary} className="flex justify-around newjobz">
+                            <div>
+                                <p className='mb-4'>{job.title}</p>
+                                <p>{job.location}</p>
+                            </div>
+
+                            <div className='depart'> <p>{job.department}</p></div>
+                        </div>
+                    </Link>
+                )))}
+
+
             </div>
         </div>
     )

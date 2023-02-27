@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .whole_Land {
   background-color: #100C08;
   color: wheat;
@@ -490,6 +489,19 @@ button[type=submit] {
   padding-right: 7px;
 }
 
+.depart {
+  width: 150px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: wheat;
+  color: #100C08 !important;
+  padding-left: 20px;
+}
+
+.newjobz {
+  border: 2px solid wheat;
+}
+
 .createJob {
   text-align: center;
   position: relative;
@@ -538,9 +550,10 @@ button[type=submit] {
 }
 
 .deleeTag {
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-bottom: 4px;
   position: relative;
-  bottom: 25px;
+  bottom: 10px;
   color: red !important;
 }
 
@@ -929,11 +942,3 @@ button[type=submit] {
   width: 80%;
   height: 200px;
 }/*# sourceMappingURL=globals.css.map */
-
-
-.layout{
-  background-color: #92602e;
-}
-.tagss{
-  max-width: 400px;
-}

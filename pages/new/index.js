@@ -35,6 +35,7 @@ export default function job() {
 
 
   }
+  console.log(tags);
 
   const refreshPage = () => {
     window.location.reload();
