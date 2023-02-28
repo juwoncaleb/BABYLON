@@ -128,14 +128,6 @@ export default function job() {
                 </div>
 
 
-                <DropboxChooser
-                    appKey={'your-uniq-app-key'}
-                    success={files => this.onSuccess(files)}
-                    cancel={() => this.onCancel()}
-                    multiselect={true}
-                    extensions={['.mp4']} >
-                    <div className="dropbox-button">Click me!</div>
-                </DropboxChooser>
 
                 <div className='resume mt-6' {...getRootProps()}>
                     <div className='upload'>

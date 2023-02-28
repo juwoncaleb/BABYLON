@@ -10,12 +10,11 @@ import { Schema, model, models } from "mongoose"
      
     },
     phone: {
-      type: String,
+      type: Number,
      
     },
     location: {
-      type: Number,
-      maxlength: 60 ,
+      type: String,
      
     },
     linkedin: {
