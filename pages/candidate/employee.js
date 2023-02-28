@@ -1,7 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
+const MONGODB_URL = process.env.MONGODB_URL
+import { Cloudinary, CloudinaryContext } from 'cloudinary-react';
 
+
+console.log(MONGODB_URL);
 export default function job() {
     // STATE MANAGEMENT
     const [title, setTitle] = useState('')
@@ -12,15 +17,9 @@ export default function job() {
     const [description, setDescription] = useState('')
     const [files, setFiles] = useState('')
     const [pdf, setPdf] = useState('')
-    useEffect(() => {
-        console.log(files);
-        console.log();
-    }, [files])
-    // this array state contains the created statge
     const [tags, setTags] = useState([])
-    // this holds the current stage till it is pusged above
     const [currentTag, setCurrentTag] = useState('')
-    // SEND JOB TO MONGODB THROUGH API
+
     //SEND TO MONGO DATA BASE
     const submitComment = async () => {
         // this is to find where we want to post int
@@ -59,18 +58,35 @@ export default function job() {
     // FUNCTION THAT SENDS ITEM TO CLOUDINARY
     const uploadImages = async () => {
         const data = new FormData()
-        data.append('file', files)
+        data.append('files', files)
         data.append("upload_preset", "uploads")
-        const upload = await axios.post("https://api.cloudinary.com/v1_1/ddjlsw268/image/upload", data)
-        const { url } = upload.data
-        let newUrl = url
-        setPdf(newUrl)
+        try {
+            const upload = await axios.post("https://api.cloudinary.com/v1_1/deptmwbo8/image/upload", data)
+            console.log(upload.data);
+        } catch (error) {
+            console.log(error);
+        }
+
+        // const { url } = upload.data
+        // let newUrl = url
+        // setPdf(newUrl)
 
     }
 
 
-    console.log(tags);
-
+    const handleUpload = (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('file', files);
+        formData.append('upload_preset', 'pdf');
+        fetch('https://api.cloudinary.com/v1_1/deotmwbo8/upload', {
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.error(error));
+      };
     const refreshPage = () => {
         window.location.reload();
     }
@@ -127,9 +143,9 @@ export default function job() {
                         <p>Drag and Drop resume here</p>
                     </div>
                 </div>
-                <p onClick={()=>{uploadImages()}}>Uploaded</p>
+                <p onClick={() => { uploadImages() }}>Uploaded</p>
                 <div className='submittButton'>
-                    <p onClick={() => { submitComment(); refreshPage();  }} className='cursor-pointer subb'>SUBMIT</p>
+                    <p onClick={() => { submitComment(); refreshPage(); }} className='cursor-pointer subb'>SUBMIT</p>
                 </div>
 
             </div>
