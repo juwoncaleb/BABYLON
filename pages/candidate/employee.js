@@ -1,41 +1,47 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { useDropzone } from 'react-dropzone';
-import axios from 'axios';
-const MONGODB_URL = process.env.MONGODB_URL
-import { Cloudinary, CloudinaryContext } from 'cloudinary-react';
+import DropboxChooser from 'react-dropbox-chooser'
+const config = {
+    bucketName: 'babylon',
+    dirName: 'pdf', /* optional */
+    region: 'eu-west-1',
+    accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
+    secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
+}
 
 
-console.log(MONGODB_URL);
 export default function job() {
     // STATE MANAGEMENT
-    const [title, setTitle] = useState('')
-    const [department, setDepartment] = useState('')
+    const [nam, setNam] = useState('')
+    const [email, setEmail] = useState('')
     const [location, setLocation] = useState('')
     const [salary, setSalary] = useState('')
-    const [deadline, setDeadline] = useState('')
-    const [description, setDescription] = useState('')
+    const [phone, setPhone] = useState('')
+    const [linkedin, setLinkedin] = useState('')
     const [files, setFiles] = useState('')
     const [pdf, setPdf] = useState('')
-    const [tags, setTags] = useState([])
+    const [github, setGithub] = useState([])
     const [currentTag, setCurrentTag] = useState('')
+    const [publicId, setPublicId] = useState('');
+    const [progress, setProgress] = useState(0)
+    console.log(files);
 
     //SEND TO MONGO DATA BASE
     const submitComment = async () => {
         // this is to find where we want to post int
-        await fetch('/api/job', {
+        await fetch('/api/candidate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
             body: JSON.stringify({
-                title,
-                department,
+                nam,
+                email,
+                phone,
                 location,
-                salary,
-                deadline,
-                description,
-                tags,
+                linkedin,
+                github,
                 pdf
             }),
         })
@@ -56,37 +62,21 @@ export default function job() {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
     // FUNCTION THAT SENDS ITEM TO CLOUDINARY
-    const uploadImages = async () => {
-        const data = new FormData()
-        data.append('files', files)
-        data.append("upload_preset", "uploads")
-        try {
-            const upload = await axios.post("https://api.cloudinary.com/v1_1/deptmwbo8/image/upload", data)
-            console.log(upload.data);
-        } catch (error) {
-            console.log(error);
-        }
+    const handleUpload = (file) => {
+        const storageRef = storage.ref();
+        const fileRef = storageRef.child(file.name);
+        fileRef.put(file).then(() => {
+            fileRef.getDownloadURL().then((url) => {
+                setPdf(url);
+                console.log('File uploaded successfully');
+            });
+        });
+    };
 
-        // const { url } = upload.data
-        // let newUrl = url
-        // setPdf(newUrl)
-
-    }
+    console.log(pdf);
 
 
-    const handleUpload = (event) => {
-        event.preventDefault();
-        const formData = new FormData();
-        formData.append('file', files);
-        formData.append('upload_preset', 'pdf');
-        fetch('https://api.cloudinary.com/v1_1/deotmwbo8/upload', {
-          method: 'POST',
-          body: formData,
-        })
-          .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((error) => console.error(error));
-      };
+    console.log(pdf);
     const refreshPage = () => {
         window.location.reload();
     }
@@ -108,33 +98,44 @@ export default function job() {
 
                         <div className='grid'>
                             <label for="title">Full Name</label>
-                            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" name="title" />
+                            <input value={nam} onChange={(e) => setNam(e.target.value)} type="text" id="title" name="title" />
                         </div>
                         <div className='grid'>
                             <label for="department">Email</label>
-                            <input value={department} onChange={(e) => setDepartment(e.target.value)} type="text" id="department" name="department" />
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="department" name="department" />
                         </div>
                         <div className='grid'>
-                            <label for="location">Phone Number</label>
-                            <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" id="location" name="location" />
+                            <label for="location">Phone</label>
+                            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id="salary" name="salary" />
                         </div>
                         <div className='grid'>
                             <label for="location">Location</label>
-                            <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" id="salary" name="salary" />
+                            <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" id="location" name="location" />
                         </div>
+                       
                         <div className='grid'>
                             <label for="location">Linkedin</label>
-                            <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" id="salary" name="salary" />
+                            <input value={linkedin} onChange={(e) => setLinkedin(e.target.value)} type="text" id="salary" name="salary" />
                         </div>
 
                         <div className='grid'>
                             <label for="location">Github</label>
-                            <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" id="salary" name="salary" />
+                            <input value={github} onChange={(e) => setGithub(e.target.value)} type="text" id="salary" name="salary" />
                         </div>
 
                     </div>
 
                 </div>
+
+
+                <DropboxChooser
+                    appKey={'your-uniq-app-key'}
+                    success={files => this.onSuccess(files)}
+                    cancel={() => this.onCancel()}
+                    multiselect={true}
+                    extensions={['.mp4']} >
+                    <div className="dropbox-button">Click me!</div>
+                </DropboxChooser>
 
                 <div className='resume mt-6' {...getRootProps()}>
                     <div className='upload'>
@@ -143,7 +144,7 @@ export default function job() {
                         <p>Drag and Drop resume here</p>
                     </div>
                 </div>
-                <p onClick={() => { uploadImages() }}>Uploaded</p>
+                <p onClick={() => { handleUpload() }}>Uploaded</p>
                 <div className='submittButton'>
                     <p onClick={() => { submitComment(); refreshPage(); }} className='cursor-pointer subb'>SUBMIT</p>
                 </div>
