@@ -1,10 +1,15 @@
+
 import dbConnect from "../../../utils/Mongo";
-import Job from "Model/Job";
+import Candidate from "Model/Candidate";
 export default async function Handler (req, res) {
     const {method} = req
     // Connect to Database
     console.log("Connecting to the database...");
-     await dbConnect()
+     try {
+        await dbConnect()
+     } catch (error) {
+        console.log(error);
+     }
     console.log("Database Connected");    
     
     if (method === "GET") {
@@ -15,10 +20,10 @@ export default async function Handler (req, res) {
     if (method === "POST") {
         try {
             console.log(req.body);
-            const newJob = await Job.create(req.body);
-            console.log(newJob);
-            res.status(200).json(newJob);
-            console.log("New JOB created");
+            const newCandidate = await Candidate.create(req.body);
+            console.log(newCandidate);
+            res.status(200).json(newCandidate);
+            console.log("New candidate logged");
         } catch (error) {
             console.log(error);
             res.status(500).json(error);
