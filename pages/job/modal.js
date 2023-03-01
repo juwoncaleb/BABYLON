@@ -15,6 +15,17 @@ const config = {
 
 export default function job({ newCandidate }) {
     console.log(newCandidate);
+    // Holds the user selected in the state
+    
+    const [selectedCandidate, setSelectedCandidate] = useState(null); // initialize selectedCandidate state variable to null
+console.log(selectedCandidate);
+    const handleCandidateSelection = (event) => {
+      const selectedValue = event.target.value;
+      console.log(selectedValue);
+      const selectedObject = newCandidate.find((candidate) => candidate.nam === selectedValue);
+      setSelectedCandidate(selectedObject); // update selectedCandidate state variable with the selected object
+    }
+  
     // STATE MANAGEMENT
     const [current, setCurrent] = useState(false)
     const [nam, setNam] = useState('')
@@ -89,7 +100,7 @@ export default function job({ newCandidate }) {
 
         <div className='joob'>
             <div className='newJob'>
-                <p className='createJob  '>Add a Candidate</p>
+                <p  className='createJob  '>Add a Candidate</p>
 
                 <div
                     onClick={() => {
@@ -128,11 +139,16 @@ export default function job({ newCandidate }) {
                 <div className='oldCandidate'>
                     <div className='dropp'>
                         <p>Select From the list of candidate in your </p>
-                        <select className='dropDown mb-10 '>
+                        <select onChange={handleCandidateSelection} className='dropDown mb-10 mt-14 '>
+                            <option  value="select candidate"  >Select candidate</option>
+
                             {newCandidate.map((candidate) => (
-                                <option key={candidate.name} value="actual value 1">{candidate.nam} </option>
+                                <option key={candidate.name} value={candidate.nam}>{candidate.nam} </option>
                             ))}
-                        </select></div>
+                        </select>
+
+                        {/* <p>{selectedCandidate.nam}</p> */}
+                    </div>
                 </div>
 
                 <div className='newCandidate'>
