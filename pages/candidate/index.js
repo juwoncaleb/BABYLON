@@ -68,22 +68,27 @@ export default function index({ newCandidate }) {
           <img className='file' src='relax.png' />
 
         </div>) : (<div>
+          {newCandidate.map(candidate => (
+            <div>
 
-          <div className='flex justify-between mt-6  mb-2 ml-4 mr-4'>
-            <p>JUWON</p>
-            <p>Software Engineer </p>
-            <p>Tuesday </p>
-            <p>JC </p>
-            <p>70 </p>
-            <div className='flex justify-center mr-4'>
-              <div className='green'></div>
-              <div className='green'></div>
-              <div className='red'></div>
+              <div className='flex justify-between mt-6  mb-2 ml-4 mr-4'>
+                <p>{candidate.nam}</p>
+                <p>{candidate.location}</p>
+                <p>{candidate.email} </p>
+                <p>JC </p>
+                <p>70 </p>
+                <div className='flex justify-center mr-4'>
+                  <div className='green'></div>
+                  <div className='green'></div>
+                  <div className='red'></div>
 
+                </div>
+                <p>YES</p>
+              </div>
+              <hr className='borderLine' />
             </div>
-            <p>YES</p>
-          </div>
-          <hr className='borderLine' />
+          ))}
+
 
         </div>)}
       </div>

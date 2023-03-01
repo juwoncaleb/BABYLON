@@ -17,7 +17,7 @@ export default function index() {
 
 
           <button className='jobButton mb-10'>
-            <Link href="/new" >
+            <Link href="/interview/new" >
               +  Create an Interview
             </Link>
           </button>
