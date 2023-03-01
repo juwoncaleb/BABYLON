@@ -16,7 +16,7 @@ export default function index({ newCandidate }) {
     <div className='candidatelemet'>
       <DashboardHeader />
       <div className='candidaTab'>
-        {/* <div className='flex justify-center mt-14 '>
+        <div className='flex justify-center mt-14 '>
           <form className='mb-10'>
             <input type="text" placeholder="Search..." />
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -51,7 +51,7 @@ export default function index({ newCandidate }) {
               +  Add candidate
             </Link>
           </button>
-        </div> */}
+        </div>
         <p className='AllCandidates ml-1'>Candidates</p>
       </div>
       <div className='candidateTable'>

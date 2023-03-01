@@ -436,6 +436,21 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.exist {
+  text-align: center;
+}
+
+.oldCandidate {
+  margin-top: 100px;
+}
+
+.dropp {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
 .jobMarket {
   margin-left: 5%;
   margin-right: 5%;

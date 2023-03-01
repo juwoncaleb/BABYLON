@@ -77,6 +77,10 @@ export default function data({ eachJobs }) {
           <div key="1" className="box">
             <div className="handle">Drag from here</div>
             Box 1
+            <Link href='/job/modal'>
+              <p className='text-4xl'>+</p>
+
+            </Link>
           </div>
           <div key="2" className="box">
             <div className="handle">Drag from here</div>
