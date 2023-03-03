@@ -463,7 +463,9 @@
 
 .dropDown {
   background-color: #100C08;
-  margin-left: 100px;
+  margin-left: 5%;
+  margin-top: 40px;
+  border: rgb(163, 153, 163) 3px solid;
 }
 
 .jobButton {
@@ -706,6 +708,15 @@ button[type=submit] {
   height: 15px;
   width: 15px;
   margin-left: 5px;
+}
+
+.schedule {
+  text-align: center;
+}
+
+.options {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .candidatelemet {

@@ -23,7 +23,7 @@ export default function index({ newJobs }) {
         <div className='job'>
             <DashboardHeader />
             <div className='jobMarket mt-14 '>
-                {/* <div className='flex justify-center '>
+                <div className='flex justify-center '>
                     <form className='mb-10'>
                         <input type="text" placeholder="Search..." />
                         <button type="submit"><i class="fa fa-search"></i></button>
@@ -55,7 +55,7 @@ export default function index({ newJobs }) {
                             +  Create Job
                         </Link>
                     </button>
-                </div> */}
+                </div>
 
                 {noJobs ? (<div className=' grid justify-center mt-40'>
                     <p className='noJob'>No Job Created </p>

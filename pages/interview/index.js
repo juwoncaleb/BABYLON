@@ -17,8 +17,8 @@ export default function index() {
 
 
           <button className='jobButton mb-10'>
-            <Link href="/interview/new" >
-              +  Create an Interview
+            <Link href="/interview/modal" >
+              +  Schedule an Interview
             </Link>
           </button>
         </div>
