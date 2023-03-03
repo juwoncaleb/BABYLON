@@ -159,7 +159,7 @@ export default function job({ newCandidate }) {
                                         <option value="12">12</option>
                                     </select>
 
-                                    <select className='ml-2' name="minute ml-2" id="minute">
+                                    <select className='ml-2' name="minute " id="minute">
                                         <option value="00">00</option>
                                         <option value="15">15</option>
                                         <option value="30">30</option>
@@ -184,7 +184,7 @@ export default function job({ newCandidate }) {
                                         <option value="12">12</option>
                                     </select>
 
-                                    <select name="minute" id="minute">
+                                    <select className='ml-2' name="minute" id="minute">
                                         <option value="00">00</option>
                                         <option value="15">15</option>
                                         <option value="30">30</option>
