@@ -35,6 +35,16 @@ export default function job({ newCandidate }) {
             console.error(error)
         }
     }
+    console.log(selectedCandidate);
+    const added = () => {
+        try {
+            dispatch(addCandidate(candidateObject))
+            console.log("Added to redux");
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
 
     // STATE MANAGEMENT
     const [nam, setNam] = useState('')
@@ -50,8 +60,14 @@ export default function job({ newCandidate }) {
     const [publicId, setPublicId] = useState('');
     const [progress, setProgress] = useState(0)
     const candidateObject = {
-        nam
+        nam,
+        email,
+        phone,
+        location,
+        linkedin,
+        github
     }
+    console.log(candidateObject);
     //SEND TO MONGO DATA BASE
     const submitComment = async () => {
         // this is to find where we want to post int
@@ -147,6 +163,8 @@ export default function job({ newCandidate }) {
 
                 </div>
                 <p onClick={addup}>Test</p>
+
+                
                 {/* <p>{selectCandidate}</p>
                 <p onClick={sendcandidate}>PUSH</p> */}
 
@@ -181,7 +199,7 @@ export default function job({ newCandidate }) {
 
                 </div>
                 <div className='submittButton'>
-                    <p onClick={() => { addup(); submitComment(); refreshPage(); }} className='cursor-pointer subb'>SUBMIT</p>
+                    <p onClick={() => { added(); submitComment(); }} className='cursor-pointer subb'>SUBMIT</p>
                 </div>
             </div>
 
