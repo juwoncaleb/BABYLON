@@ -4,30 +4,39 @@ import { useDropzone } from 'react-dropzone';
 import DropboxChooser from 'react-dropbox-chooser'
 import Candidate from 'Model/Candidate';
 import dbConnect from 'utils/Mongo';
-const config = {
-    bucketName: 'babylon',
-    dirName: 'pdf', /* optional */
-    region: 'eu-west-1',
-    accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
-    secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
-}
+import { useDispatch, useSelector } from 'react-redux'
+import { addCandidate } from 'redux/pipline'
+
+
 
 
 export default function job({ newCandidate }) {
-    console.log(newCandidate);
-    // Holds the user selected in the state
-    
+    // HOLD USER SELECTED FROM THE OPTION
     const [selectedCandidate, setSelectedCandidate] = useState(null); // initialize selectedCandidate state variable to null
-console.log(selectedCandidate);
+    let selectedObject
     const handleCandidateSelection = (event) => {
-      const selectedValue = event.target.value;
-      console.log(selectedValue);
-      const selectedObject = newCandidate.find((candidate) => candidate.nam === selectedValue);
-      setSelectedCandidate(selectedObject); // update selectedCandidate state variable with the selected object
+        const selectedValue = event.target.value;
+        selectedObject = newCandidate.find((candidate) => candidate.nam === selectedValue);
+        setSelectedCandidate(selectedObject); // update selectedCandidate state variable with the selected object
     }
-  
+
+    // REDUX FUNCTIONALITY
+    const { selectCandidate } = useSelector(state => state.entry)
+    console.log(selectCandidate);
+    console.log("Added to redux");
+
+    const dispatch = useDispatch()
+    console.log(selectedCandidate);
+    const addup = () => {
+        try {
+            dispatch(addCandidate(selectedCandidate))
+            console.log("Added to redux");
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     // STATE MANAGEMENT
-    const [current, setCurrent] = useState(false)
     const [nam, setNam] = useState('')
     const [email, setEmail] = useState('')
     const [location, setLocation] = useState('')
@@ -40,8 +49,9 @@ console.log(selectedCandidate);
     const [currentTag, setCurrentTag] = useState('')
     const [publicId, setPublicId] = useState('');
     const [progress, setProgress] = useState(0)
-    console.log(files);
-
+    const candidateObject = {
+        nam
+    }
     //SEND TO MONGO DATA BASE
     const submitComment = async () => {
         // this is to find where we want to post int
@@ -63,6 +73,7 @@ console.log(selectedCandidate);
 
 
     }
+
 
     // DRAG AND DROP FEATURE
     const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
@@ -95,12 +106,11 @@ console.log(selectedCandidate);
     const refreshPage = () => {
         window.location.reload();
     }
-    console.log(newCandidate);
     return (
 
         <div className='joob'>
             <div className='newJob'>
-                <p  className='createJob  '>Add a Candidate</p>
+                <p className='createJob  '>Add a Candidate</p>
 
                 <div
                     onClick={() => {
@@ -136,73 +146,42 @@ console.log(selectedCandidate);
                     </div>
 
                 </div>
-                <div className='oldCandidate'>
-                    <div className='dropp'>
-                        <p>Select From the list of candidate in your </p>
-                        <select onChange={handleCandidateSelection} className='dropDown mb-10 mt-14 '>
-                            <option  value="select candidate"  >Select candidate</option>
+                <p onClick={addup}>Test</p>
+                {/* <p>{selectCandidate}</p>
+                <p onClick={sendcandidate}>PUSH</p> */}
 
-                            {newCandidate.map((candidate) => (
-                                <option key={candidate.name} value={candidate.nam}>{candidate.nam} </option>
-                            ))}
-                        </select>
+                <div className='grid '>
 
-                        {/* <p>{selectedCandidate.nam}</p> */}
+                    <div className='grid'>
+                        <label for="title">Full Name</label>
+                        <input value={nam} onChange={(e) => setNam(e.target.value)} type="text" id="title" name="title" />
                     </div>
+                    <div className='grid'>
+                        <label for="department">Email</label>
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="department" name="department" />
+                    </div>
+                    <div className='grid'>
+                        <label for="location">Phone</label>
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id="salary" name="salary" />
+                    </div>
+                    <div className='grid'>
+                        <label for="location">Location</label>
+                        <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" id="location" name="location" />
+                    </div>
+
+                    <div className='grid'>
+                        <label for="location">Linkedin</label>
+                        <input value={linkedin} onChange={(e) => setLinkedin(e.target.value)} type="text" id="salary" name="salary" />
+                    </div>
+
+                    <div className='grid'>
+                        <label for="location">Github</label>
+                        <input value={github} onChange={(e) => setGithub(e.target.value)} type="text" id="salary" name="salary" />
+                    </div>
+
                 </div>
-
-                <div className='newCandidate'>
-                    <p className='fillForm  mt-20'>Fill out details , of prospective employee</p>
-
-                    <div className='formInput flex justify-center mt-14'>
-
-                        <div className='grid '>
-
-                            <div className='grid'>
-                                <label for="title">Full Name</label>
-                                <input value={nam} onChange={(e) => setNam(e.target.value)} type="text" id="title" name="title" />
-                            </div>
-                            <div className='grid'>
-                                <label for="department">Email</label>
-                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="department" name="department" />
-                            </div>
-                            <div className='grid'>
-                                <label for="location">Phone</label>
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id="salary" name="salary" />
-                            </div>
-                            <div className='grid'>
-                                <label for="location">Location</label>
-                                <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" id="location" name="location" />
-                            </div>
-
-                            <div className='grid'>
-                                <label for="location">Linkedin</label>
-                                <input value={linkedin} onChange={(e) => setLinkedin(e.target.value)} type="text" id="salary" name="salary" />
-                            </div>
-
-                            <div className='grid'>
-                                <label for="location">Github</label>
-                                <input value={github} onChange={(e) => setGithub(e.target.value)} type="text" id="salary" name="salary" />
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div className='resume mt-6' {...getRootProps()}>
-                        <div className='upload'>
-                            <img className='ml-20' src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-file-back-to-school-flaticons-lineal-color-flat-icons-4.png" />
-
-                            <p>Drag and Drop resume here</p>
-                        </div>
-                    </div>
-                    <p onClick={() => { handleUpload() }}>Uploaded</p>
-                    <div className='submittButton'>
-                        <p onClick={() => { submitComment(); refreshPage(); }} className='cursor-pointer subb'>SUBMIT</p>
-                    </div>
-
+                <div className='submittButton'>
+                    <p onClick={() => { addup(); submitComment(); refreshPage(); }} className='cursor-pointer subb'>SUBMIT</p>
                 </div>
             </div>
 

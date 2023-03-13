@@ -1,14 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { useDropzone } from 'react-dropzone';
-import DropboxChooser from 'react-dropbox-chooser'
-const config = {
-    bucketName: 'babylon',
-    dirName: 'pdf', /* optional */
-    region: 'eu-west-1',
-    accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
-    secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
-}
+
 
 
 export default function job() {

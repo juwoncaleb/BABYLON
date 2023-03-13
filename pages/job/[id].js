@@ -3,13 +3,18 @@ import GridLayout from "react-grid-layout";
 import Job from 'Model/Job'
 import dbConnect from 'utils/Mongo'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
+import { addCandidate } from 'redux/pipline'
 
 
 export default function data({ eachJobs }) {
   const [selectedButton, setSelectedButton] = useState(null);
-
+  const { selectCandidate } = useSelector(state => state.entry)
+  console.log(selectCandidate);
+  console.log("Added to redux");
   const [layout, setLayout] = useState([
     { i: '1', x: 0, y: 0, w: 2, h: 2 },
+    { i: '8', x: 0, y: 1, w: 2, h: 2 },
     { i: '2', x: 2, y: 0, w: 2, h: 2 },
     { i: '3', x: 4, y: 0, w: 2, h: 2 },
     { i: '4', x: 6, y: 0, w: 2, h: 2 },
@@ -26,6 +31,14 @@ export default function data({ eachJobs }) {
     <div className='eachjobs mb-4'>
       <div className='title-container '>
         <p className='title'>{eachJobs.title}</p>
+      </div>
+      <div>
+        hjklkfsd
+        {selectCandidate.map((candidatez) => (
+          <p key={candidatez.nam}>
+            {candidatez.nam}
+           hello</p>
+        ))}
       </div>
       <div className='flex toptunnel justify-center'>
 
@@ -77,6 +90,14 @@ export default function data({ eachJobs }) {
           <div key="1" className="box">
             <div className="handle">Drag from here</div>
             Box 1
+            <Link href='/job/modal'>
+              <p className='text-4xl'>+</p>
+
+            </Link>
+          </div>
+          <div key="8" className="box">
+            <div className="handle">Drag from here</div>
+            BoL;';x 1
             <Link href='/job/modal'>
               <p className='text-4xl'>+</p>
 

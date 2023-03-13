@@ -9,6 +9,7 @@ import { useQuery } from 'react-query';
 
 
 export default function index({ newJobs }) {
+    console.log(newJobs);
     const [noJobs, setNojobs] = useState(false)
     // this is used in client side cachng
     const { newJobs: cachednewJobs, status } = useQuery('newJobs', () => newJobs);
