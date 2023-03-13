@@ -69,14 +69,16 @@ export default function data({ eachJobs }) {
 
 
       {/* PIPLINE */}
-      {selectedButton === 2 ? <div>
-        <div className='flex justify-around mt-14 stages'>
+      {selectedButton === 2 ?
+       <div className='sta'>
+        <div className='flex justify-around  stages'>
           <p>Phone Screen</p>
           <p>Technical</p>
           <p>Cultural</p>
           <p>Behavorial</p>
           <p>Offer</p>
         </div>
+        <hr className='pipe'/>
 
         <GridLayout
           className="layout"
@@ -120,7 +122,9 @@ export default function data({ eachJobs }) {
             Box 5
           </div>
         </GridLayout>
-      </div> : null}
+      </div>
+
+       :null}
 
 
 
